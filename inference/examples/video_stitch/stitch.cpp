@@ -69,7 +69,7 @@ int VideoStitchImpl::draw(std::vector<bm::FrameInfo>& frames, std::vector<bm::Fr
                 bmcv_color_t color = {255, 0, 0};
                 int thickness = 4;
                 float font_scale = 4;
-                bmcv_image_put_text(m_handle, *iter->second->bmimage, text.c_str(), org, color, font_scale, thickness);
+                //bmcv_image_put_text(m_handle, *iter->second->bmimage, text.c_str(), org, color, font_scale, thickness);
             }
             bmcv_image_draw_rectangle(m_handle, *iter->second->bmimage, iter->second->objs.size(), rects, 3, 255, 0, 0);
         }

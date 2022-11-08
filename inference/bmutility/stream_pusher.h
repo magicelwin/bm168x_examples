@@ -104,9 +104,10 @@ namespace bm {
                 ret = av_interleaved_write_frame(m_ofmt_ctx, pkt);
                 av_packet_free(&pkt);
                 if (ret != 0) {
-                    std::cout << "av_interleaved_write_frame err" << ret << std::endl;
-                    m_output_state = DOWN;
-                    break;
+                    char tmp[256];
+                    printf("av_interleaved_write_frame err=%s\n", av_make_error_string(tmp, sizeof(tmp), ret));
+                    //m_output_state = DOWN;
+                    //break;
                 }
             }
 
